@@ -4,10 +4,10 @@ let pointsPerClick = 1;
 
 function updateDisplay() {
     document.getElementById("score-display").textContent = 'Score: ' + score;
-    document.getElementById("rate-display").textContent = 'Points Per Click: ' + pointsPerClick;
+    document.getElementById("rate-display").textContent = 'Points per click: ' + pointsPerClick;
 };
 
-document.getElementById('click-btn').document.addEventListener("click", function() {
+document.getElementById('click-btn').addEventListener("click", function() {
     score += pointsPerClick;
     updateDisplay();
 });
