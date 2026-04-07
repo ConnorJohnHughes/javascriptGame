@@ -12,3 +12,23 @@ document.getElementById('click-btn').addEventListener("click", function() {
     updateDisplay();
 });
 
+const upgrades = [
+  {
+    id: 1,
+    name: "double points per click",
+    cost: 10,
+    bonus: pointsPerClick * 2
+  },
+  {
+    id: 2,
+    name: "triple points per click",
+    cost: 20,
+    bonus: pointsPerClick * 3
+  },
+  {
+    id: 3,
+    name: "x5 points per click",
+    cost: 50,
+    bonus: pointsPerClick * 5
+  }
+]
