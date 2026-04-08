@@ -54,4 +54,15 @@ function renderUpgrades(){
   });
 };
 
+function buyUpgrade(id) {
+  const upgrade = upgrades.find(el => el.id === id);
+
+  if (score >= upgrade.cost) {
+    score -= upgrade.cost;
+    pointsPerClick += upgrade.bonus;
+    updateDisplay();
+    renderUpgrades();
+  }
+}
+
 renderUpgrades();
