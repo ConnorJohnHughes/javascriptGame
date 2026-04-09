@@ -1,4 +1,5 @@
-
+const scoreToWin = 200;
+let winner = false;
 
 let score = 0;
 let pointsPerClick = 1;
@@ -13,6 +14,7 @@ document.getElementById('click-btn').addEventListener("click", function() {
     score += pointsPerClick;
     showFloatingText("+" + pointsPerClick);
     updateDisplay();
+    checkWin();
     renderUpgrades();
 });
 
@@ -78,6 +80,7 @@ function buyUpgrade(id) {
     showFloatingText("-" + upgrade.cost);
     pointsPerClick += upgrade.bonus;
     updateDisplay();
+    checkWin();
     renderUpgrades();
   }
 
@@ -94,6 +97,18 @@ function showFloatingText(amount) {
   setTimeout(() => {
     text.remove();
   }, 500);
+}
+
+function checkWin() {
+  if (score >= scoreToWin && !winner) {
+    winner = true;
+
+    const winMessage = document.createElement("h1");
+    winMessage.textContent = "You Win!!!";
+    winMessage.id = "win-message";
+
+    document.body.appendChild(winMessage);
+  }
 }
 
 renderUpgrades();
